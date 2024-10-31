@@ -1,0 +1,8 @@
+body {
+  margin: 0;
+  background-image: url(../assets/images/background.jpg);
+  background-repeat: no-repeat;
+  background-position: bottom center;
+  background-size: cover;
+  background-color: green;
+}

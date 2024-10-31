@@ -4,20 +4,83 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Media Exercise</title>
+  <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
   <div class="container">
     <!-- AUDIO HTML GOES HERE -->
+    <section class="audio-section">
+      <h2>Audio</h2>
+      <audio controls muted loop>
+        <source src="./assets/audio/ambient.mp3">
+        <p>Your browser does not support the audio tag.</p>
+      </audio>
+    </section>
 
     <!-- VIDEO HTML GOES HERE -->
+    <section class="video-section">
+      <h2>Video</h2>
+      <video width="600" controls muted poster="./assets/images/poster.jpg">
+        <source src="./assets/video/ocean.mp4">
+        <p>Your browser does not support the video tag.</p>
+      </video>
+    </section>
 
     <!-- IMAGE MAP HTML GOES HERE-->
+    <section class="image-section">
+      <h2>Image</h2>
+      <img src="./assets/images/fruit_table.jpg" alt="" usemap="#fruits_map" width="600">
+      <map id="fruits_map">
+        <area shape="circle" coords="440,200,80" href="https://en.wikipedia.org/wiki/Coffee" alt="Coffee" title="Coffee">
+        <area shape="rect" coords="600,600,300,300" href="https://en.wikipedia.org/wiki/Orange_(fruit)" alt="Orange" title="Orange">
+        <area shape="rect" coords="0,0,300,600" href="https://en.wikipedia.org/wiki/Lavandula" alt="lavender" title="lavender">
+      </map>
+    </section>
 
     <!-- CANVAS HTML GOES HERE -->
+    <section class="canvas-section">
+      <h2>Canvas</h2>
+      <canvas id="canvas" width="500" height="500" >
+      </canvas>
+    </section>
   </div>
 
   <script>
     /* CANVAS JAVASCRIPT GOES HERE */
+    const canvas = document.getElementById('canvas');
+    const context = canvas.getContext('2d');
+
+    context.fillStyle = 'lightgray';
+    context.fillRect(0, 0, canvas.width, canvas.height);
+
+    context.beginPath();
+    context.moveTo(100, 100);
+    context.lineTo(100, 400);
+    context.strokeStyle = 'red';
+    context.lineWidth = 5;
+    context.stroke();
+
+    context.beginPath();
+    context.moveTo(100, 400);
+    context.lineTo(400, 400);
+    context.strokeStyle = 'blue';
+    context.lineWidth = 5;
+    context.stroke();
+
+    context.beginPath();
+    context.moveTo(400, 400);
+    context.lineTo(400, 100);
+    context.strokeStyle = 'green';
+    context.lineWidth = 5;
+    context.stroke();
+
+    context.beginPath();
+    context.moveTo(400, 100);
+    context.lineTo(100, 100);
+    context.strokeStyle = 'yellow';
+    context.lineWidth = 5;
+    context.stroke();
   </script>
 </body>
+
 </html>
